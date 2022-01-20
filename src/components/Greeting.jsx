@@ -1,5 +1,9 @@
 import React from 'react'
 import './styles/greeting.scss'
+import sunrise from '../assets/icons/sunrise-svgrepo-com.svg'
+import sun from '../assets/icons/sun-svgrepo-com.svg'
+import moon from '../assets/icons/moon-svgrepo-com.svg'
+
 
 const Greeting = () => {
 
@@ -12,18 +16,26 @@ const Greeting = () => {
 
     const today = date.getDate()+' '+ monthNames[date.getMonth()]+' '+date.getFullYear();
 
-    if (hours < 12) {
-        timeOfDay = 'Morning';
-    } else if (hours >= 12 && hours < 17) {
-        timeOfDay = 'Afternoon';
-    } else {
-        timeOfDay = 'Night';
+    const greetingIcons = () => {
+        if(hours < 12) {
+            timeOfDay = 'Morning'
+            return sunrise;
+        } else if(hours >= 12 && hours < 17) {
+            timeOfDay = 'Afternoon'
+            return sun;
+        } else {
+            timeOfDay = 'Night'
+            return moon;
+        }
     }
 
     return (
         <div className='greeting'>
-            <h2>Good {timeOfDay}!</h2>
-            <p>It's {today}</p>
+            <img src={greetingIcons()} alt="" className='greeting__icon'/>
+            <div className="greeting__text">
+                <p>{today}</p>
+                <h2>Good {timeOfDay}!</h2>
+            </div>
         </div>
     )
 }

@@ -1,8 +1,16 @@
 .greeting {
-    background-color: burlywood;
-    border: 1px solid black;
     padding: 20px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    width: 45%;
+
+    &__icon {
+        width: 10vmin;
+        height: 10vmin;
+        margin-right: 3vw;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
 }

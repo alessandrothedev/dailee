@@ -2,4 +2,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    &__logo {
+        background: #8EC5FC;
+        background: -webkit-linear-gradient(to right, #8EC5FC 0%, #E0C3FC 100%);
+        background: -moz-linear-gradient(to right, #8EC5FC 0%, #E0C3FC 100%);
+        background: linear-gradient(to right, #8EC5FC 0%, #E0C3FC 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 }
