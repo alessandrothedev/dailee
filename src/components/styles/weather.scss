@@ -4,8 +4,11 @@
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     padding: 20px;
     border-radius: 10px;
-    width: 45%;
-    align-items: center;
+    width: 40%;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-direction: column;
 
     &__info {
         display: flex;
@@ -22,7 +25,7 @@
         }
 
         h3 {
-            line-height: 75%;
+            line-height: 85%;
         }
     }
 

@@ -2,7 +2,15 @@
     padding: 20px;
     display: flex;
     justify-content: flex-start;
+    align-items: center;
     width: 45%;
+
+    &__text {
+        h2 {
+            font-size: 2.5rem;
+            line-height: 95%;
+        }
+    }
 
     &__icon {
         width: 10vmin;
