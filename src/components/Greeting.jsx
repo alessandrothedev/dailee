@@ -7,7 +7,6 @@ const Greeting = () => {
 
     const date = new Date();
     const hours = date.getHours();
-    const time = date.getHours() + ":" + date.getMinutes()
 
     const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
@@ -25,7 +24,6 @@ const Greeting = () => {
         <div className='greeting'>
             <h2>Good {timeOfDay}!</h2>
             <p>It's {today}</p>
-            <p>{time}</p>
         </div>
     )
 }

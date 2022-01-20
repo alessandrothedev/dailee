@@ -4,50 +4,43 @@ import './styles/weather.scss'
 
 const Weather = () => {
 
-    const [latitude, setLatitude] = useState(0)
-    const [longitude, setLongitude] = useState(0)
-    const [location, setLocation] = useState([])
-
+    const [weather, setWeather] = useState(null);
+  
+    const getWeather = (lat, lon) => {
+        fetch(`https://api.weatherapi.com/v1/current.json?key=db698b5e650a441fae6190451221401&q=${lat},${lon}&days=7&aqi=no&alerts=no`)
+        .then(res => res.json())
+        .then(data => setWeather(data))
+        .catch(err => console.log(err))
+    }
+  
     useEffect(() => {
-        navigator.geolocation.getCurrentPosition( (position) => {
-            setLatitude(position.coords.latitude)
-            setLongitude(position.coords.longitude)
-        })
-        
-        fetch(`https://api.weatherapi.com/v1/forecast.json?key=db698b5e650a441fae6190451221401&q=${latitude},${longitude}&days=7&aqi=no&alerts=no`)
-        .then(response => response.json())
-        .then(data => { 
-            setLocation(data)
-            console.log(data)
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          getWeather(position.coords.latitude, position.coords.longitude);
         });
-    }, [latitude, longitude])
+      } else {
+        getWeather(51.5072, 0.1276);
+      }
+    }, []);
+
+    console.log(weather)
 
     return (
         <div className='weather-widget'>
-           {latitude && 
+
+            {weather && 
                 <div className="weather-widget__info">
-                    <p>{location.location.name}</p>
-                    <h2>{location.current.temp_c}&#176;C</h2>
-                </div>
-            }
+                    <img src={weather.current.condition.icon} alt="" />
 
-            <div className='weather-widget__icon'>
-                {latitude && <img src={location.current.condition.icon} alt="" />}
-                {latitude && <h3>{location.current.condition.text}</h3>}
-            </div>
-
-            <div className="weather-widget__forecast">
-                {latitude && location.forecast.forecastday[0].hour.map(hour => {
-                    return (
-                    <div className="weather-widget__forecast-info" key={hour.time_epoch}>
-                        <p>{hour.time}</p>
-                        <h4>{hour.condition.text}</h4>
-                        <img src={hour.condition.icon} alt="" />
+                    <div className="weather-widget__info-text">
+                        <h3>{weather.location.name}</h3>
+                        <p className="weather-widget__info-text--thin">{weather.location.region}</p>
+                        <p>{weather.current.condition.text}</p>
                     </div>
-                    )
-                })}
-            </div>
-            
+
+                    <h2>{weather.current.temp_c}&#176;</h2>
+                </div>
+            }      
         </div>
     )
 }
