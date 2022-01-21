@@ -1,15 +1,20 @@
 .newsfeed {
     width: 40%;
 
-    &__article {
-        margin: 20px 0;
+    a, :active, :visited, :hover {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        text-decoration: none;
+        color: #202020;
 
         h4 {
-            font-size: .8rem;
+            font-size: .9rem;
         }
+    }
+
+    &__article {
+        margin: 20px 0;
     }
 
     &__img {

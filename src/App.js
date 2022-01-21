@@ -2,7 +2,7 @@ import Greeting from './components/Greeting'
 import NavBar from './components/NavBar';
 import NewsFeed from './components/NewsFeed';
 import Weather from './components/Weather';
-import {BrowserRouter as Router} from 'react-router-dom'
+import Todo from './components/Todo';
 
 function App() {
 
@@ -15,10 +15,8 @@ function App() {
                 <Weather />
             </header>
             <section className='user-section'>
-                <div className="todo">aaaa</div>
-                <Router>
+                    <Todo />
                     <NewsFeed />
-                </Router>
             </section>
         </div>
     </div>
