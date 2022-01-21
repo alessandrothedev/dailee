@@ -16,12 +16,13 @@ body {
 }
 
 .container {
-    background-color: rgb(240, 239, 239);
+    background-color: rgb(247, 245, 245);
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     margin: 10vh auto;
     border-radius: 20px;
     padding: 40px;
     width: 80%;
+    max-width: 1440px;
 }
 
 .header {

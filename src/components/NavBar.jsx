@@ -9,7 +9,7 @@ const NavBar = () => {
     return (
         <div className='nav'>
             <h3 className='nav__logo'>dailee</h3>
-            <h4>{time}</h4>
+            <p>{time}</p>
         </div>
     )
 };

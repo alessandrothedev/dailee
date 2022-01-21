@@ -1,5 +1,4 @@
-import React, { useState, useEffect} from 'react';
-import { Link } from "react-router-dom";  
+import React, { useState, useEffect} from 'react'; 
 import './styles/newsfeed.scss'
 
 const NewsFeed = () => {
@@ -21,12 +20,12 @@ const NewsFeed = () => {
   return <div className='newsfeed'>
             <h2>BBC NEWS</h2>
             {news && news.articles.slice(0,5).map((article, index) => {
-                return <Link to={article.url} key={index}>
-                    <div className="newsfeed__article">
-                            <h4>{article.title}</h4>
-                            <img src={article.urlToImage} alt="" className='newsfeed__img'/>
+                return <div className="newsfeed__article" key={index}>
+                            <a href={article.url} target="_blank">
+                                <h4>{article.title}</h4>
+                                <img src={article.urlToImage} alt="" className='newsfeed__img'/>
+                            </a>
                         </div>
-                </Link>
             })}
         </div>;
 };
