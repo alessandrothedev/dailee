@@ -35,7 +35,7 @@ const Weather = () => {
                     <div className="weather-widget__info-text">
                         <h3>{weather.location.name}</h3>
                         <p className="weather-widget__info-text--thin">{weather.location.region}</p>
-                        <p>{weather.current.condition.text}</p>
+                        <p className='weather-widget__info-text--condition'>{weather.current.condition.text}</p>
                     </div>
 
                     <h2>{weather.current.temp_c}&#176;</h2>
