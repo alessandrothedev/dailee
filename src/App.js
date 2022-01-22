@@ -3,6 +3,7 @@ import NavBar from './components/NavBar';
 import NewsFeed from './components/NewsFeed';
 import Weather from './components/Weather';
 import Todo from './components/Todo';
+import './App.scss';
 
 function App() {
 

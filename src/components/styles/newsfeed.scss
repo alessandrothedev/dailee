@@ -1,5 +1,18 @@
+@use './mixins' as *;
+@use './variables' as *;
+
 .newsfeed {
     width: 40%;
+
+    @include small-phone {
+        margin: 10vh 0;
+        width: 100%;
+    }
+
+    @include phone {
+        margin: 10vh 0;
+        width: 100%;
+    }
 
     a, :active, :visited, :hover {
         display: flex;
@@ -7,6 +20,12 @@
         justify-content: space-between;
         text-decoration: none;
         color: #202020;
+
+        @include small-phone {
+            border-bottom: 1px solid rgb(165, 164, 164);
+            padding-bottom: 20px;
+            flex-direction: column;
+        }
 
         h4 {
             font-size: .9rem;
@@ -20,5 +39,10 @@
     &__img {
         margin-left: 20px;
         width: 25%;
+
+        @include small-phone {
+            margin: 0;
+            width: 100%;
+        }
     }
 }
