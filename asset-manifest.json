@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/dailee/static/css/main.aa35b27b.css",
-    "main.js": "/dailee/static/js/main.241f23f1.js",
+    "main.js": "/dailee/static/js/main.251c7c2e.js",
     "static/js/787.58bf35ee.chunk.js": "/dailee/static/js/787.58bf35ee.chunk.js",
     "static/media/sun-svgrepo-com.svg": "/dailee/static/media/sun-svgrepo-com.d797c2d9ca7652e6a09a71e79c5b6c69.svg",
     "static/media/moon-svgrepo-com.svg": "/dailee/static/media/moon-svgrepo-com.4069f81558378d70545b43d893fb1538.svg",
     "static/media/sunrise-svgrepo-com.svg": "/dailee/static/media/sunrise-svgrepo-com.ece17501dc206aff246833acbed4dba9.svg",
     "index.html": "/dailee/index.html",
     "main.aa35b27b.css.map": "/dailee/static/css/main.aa35b27b.css.map",
-    "main.241f23f1.js.map": "/dailee/static/js/main.241f23f1.js.map",
+    "main.251c7c2e.js.map": "/dailee/static/js/main.251c7c2e.js.map",
     "787.58bf35ee.chunk.js.map": "/dailee/static/js/787.58bf35ee.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.aa35b27b.css",
-    "static/js/main.241f23f1.js"
+    "static/js/main.251c7c2e.js"
   ]
 }
