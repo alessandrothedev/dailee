@@ -23,8 +23,6 @@ const Weather = () => {
       }
     }, []);
 
-    console.log(weather)
-
     return (
         <div className='weather-widget'>
 

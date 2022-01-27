@@ -7,10 +7,11 @@ const NewsFeed = () => {
 
     useEffect(() => {
         const getNews = () => {
-            fetch(`https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=7573b0e4b88d415e8e5d070778d0472d`)
+            fetch(`https://api.thenewsapi.com/v1/news/top?api_token=bTEYIQMEEVAQTl7x43k4wjeJD04GSKBVnYghoAxw&language=en&categories=tech`)
             .then(res => res.json())
             .then(data => setNews(data))
             .catch(err => console.log(err))
+            console.log(news)
         }
         getNews();
     }, [])
@@ -18,12 +19,12 @@ const NewsFeed = () => {
     console.log(news)
 
   return <div className='newsfeed'>
-            <h2>BBC NEWS</h2>
-            {news && news.articles.slice(0,5).map((article, index) => {
+            <h2>LATEST TECH NEWS</h2>
+            {news && news.data.slice(0,5).map((data, index) => {
                 return <div className="newsfeed__article" key={index}>
-                            <a href={article.url} target="_blank">
-                                <h4>{article.title}</h4>
-                                <img src={article.urlToImage} alt="" className='newsfeed__img'/>
+                            <a href={data.url} target="_blank">
+                                <h4>{data.title}</h4>
+                                <img src={data.image_url} alt="" className='newsfeed__img'/>
                             </a>
                         </div>
             })}
